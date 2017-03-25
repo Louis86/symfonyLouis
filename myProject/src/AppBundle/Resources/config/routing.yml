@@ -1,0 +1,17 @@
+ecam_my_project_homepage:
+    path:     /
+    defaults: { _controller: ECAMMyProjectBundle:Default:index }
+
+
+# src/ECAM/MyProjectBundle/Resources/config/routing.yml
+hello_the_world:
+    path: /hello-world
+    defaults: { _controller: ECAMMyProjectBundle:Default:index }
+
+
+
+# src/ECAM/MyProjectBundle/Resources/config/routing.yml
+ajouter:
+    path: /ajouter
+    defaults: { _controller: ECAMMyProjectBundle:note:ajouter }
+

@@ -1,0 +1,23 @@
+ecam_my_project:
+    resource: "@ECAMMyProjectBundle/Resources/config/routing.yml"
+    type:     annotation
+    prefix:   /ecam/
+
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+
+
+# app/config/routing.yml
+
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
+
+
+
+
+
+
