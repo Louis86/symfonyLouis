@@ -1,4 +1,0 @@
-services:
-#    ecam_my_project.example:
-#        class: ECAM\MyProjectBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
