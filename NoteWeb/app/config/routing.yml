@@ -1,0 +1,8 @@
+ecam_my_project:
+    resource: "@ECAMMyProjectBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

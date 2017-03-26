@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Louis
+ * Date: 25-03-17
+ * Time: 22:48
+ */
+namespace ECAM\MyProjectBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+
+use Symfony\Component\Serializer\Serializer;
+
+
+/**
+ * Note
+ *
+ * @ORM\Table(name="note")
+ * @ORM\Entity(repositoryClass="ECAM\MyProjectBundle\Repository\NoteRepository")
+ */
+class Note
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="titre", type="string", length=255)
+     */
+    private $titre;
+
+    /**
+     * @var \DateTime
+     *
+     * @Assert\DateTime()
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="content", type="text")
+     */
+    private $contenu;
+
+    /**
+     * @var categorie
+     *
+     * @Assert\NotNull()
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="notes")
+     */
+    private $categorie;
+
+}

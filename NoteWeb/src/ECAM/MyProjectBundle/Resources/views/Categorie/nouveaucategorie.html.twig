@@ -1,0 +1,20 @@
+{% extends 'ECAMMyProjectBundle::accueil.html.twig' %}
+
+{% block title %}Nouveau categorie{% endblock %}
+
+{% block pageheader %}Nouveau categorie{% endblock %}
+
+{% block actions %}
+    <a href="{{ path('notepad_category_list') }}"
+       class="btn btn-lg btn-default">
+        Retour
+    </a>
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

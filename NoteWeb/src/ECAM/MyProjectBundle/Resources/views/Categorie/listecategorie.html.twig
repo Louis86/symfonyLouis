@@ -1,0 +1,41 @@
+{% extends 'ECAMMyProjectBundle::accueil.html.twig' %}
+
+{% block title %}Liste des categories{% endblock %}
+
+{% block pageheader %}Liste des categories{% endblock %}
+
+{% block actions %}
+    <a href="{{ path('notepad_category_new') }}"
+       class="btn btn-lg btn-default">
+        <i class="glyphicon glyphicon-plus"></i>
+        Ajouter categorie
+    </a>
+    <a href="{{ path('notepad_note_list') }}"
+       class="btn btn-lg btn-default">
+        Back
+    </a>
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-striped">
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.nom }}</td>
+                <td class="text-right">
+                    <a href="{{ path('notepad_category_edit', {'categorie': categorie.id}) }}"
+                       class="btn btn-sm btn-default">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        Modifier
+                    </a>
+                    <a href="{{ path('notepad_category_delete', {'categorie': categorie.id}) }}"
+                       class="btn btn-sm btn-default">
+                        <i class="glyphicon glyphicon-trash"></i>
+                        Effacer
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
