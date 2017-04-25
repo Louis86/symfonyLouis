@@ -1,0 +1,17 @@
+<h3> Note </h3>
+
+<form #formCreate="ngForm" (ngSubmit)="ajouterNote(ngForm.value)">
+    <input type="text" id="categorie" ngControl="categorie" placeholder="categorie"/><br/>
+    <input type="text" id="tire" ngControl="titre" placeholder="titre"/><br/>
+    <input type="text" id="date" ngControl="date" placeholder="date"/><br/>
+    <input type="text" id="contenu" ngControl="contenu" placeholder="contenu"/><br/>
+    <button type="submit">ajouter</button>
+</form>
+
+<input #noteTitle type="text" placeholder="ajouter un titre au de Note"><button (click)="ajouterNote(noteTitre.value)">ajouter</button>
+<div *ngIf="nbOfNote *** 1">1 Note vu recemment</div>
+<div *ngIf="nbOfNote > 1">{{nbOfNote}}Note vus récemment</div>
+<ul>
+    <li *ngFor ="#note of recentlyWatchNote">
+    {{note.titre}}
+</ul>
