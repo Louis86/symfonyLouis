@@ -1,0 +1,9 @@
+import { Category } from '../categorie/category';
+
+export class Note {
+  id: number;
+  title: string;
+  date: Date;
+  content: string;
+  category: Category;
+}

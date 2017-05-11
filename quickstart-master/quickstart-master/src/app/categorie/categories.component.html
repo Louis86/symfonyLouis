@@ -1,0 +1,83 @@
+<div class="container">
+
+  <div class="page-header">
+    <div class="btn-toolbar pull-right">
+
+      <button class="btn btn-lg btn-default"
+        (click)="initNewCategory()">
+        <i class="glyphicon glyphicon-plus"></i>
+        Add category
+      </button>
+
+      <a routerLink="/notes"
+         routerLinkActive="active"
+         class="btn btn-lg btn-default">
+        Notes
+      </a>
+
+    </div>
+
+    <h1>{{ title }}</h1>
+
+  </div>
+
+  <table class="table table-striped">
+    <tr *ngFor="let category of catg; let i = index;">
+      <td>
+        <span *ngIf="category_edited != i">
+          {{ category.name }}
+        </span>
+        <input id="title" 
+               type="text" 
+               class="form-control" 
+               required="true"
+               *ngIf="category_edited == i"
+               [(ngModel)]="category.name"/>
+      </td>
+      <td class="text-right">
+        <button class="btn blue"
+                (click)="updateCategory(category, i)"
+                *ngIf="category_edited == i">
+          Valider
+        </button>
+        <button class="btn btn-sm btn-default"
+                (click)="category_edited = -1"
+                *ngIf="category_edited == i">
+          Fermer
+        </button>
+        <button class="btn btn-sm btn-default"
+                (click)="category_edited = i"
+                *ngIf="category_edited != i">
+          <i class="glyphicon glyphicon-pencil"></i>
+          Modifier
+        </button>
+        <button class="btn btn-sm btn-default"
+                (click)="deleteCategory(category, i)">
+          <i class="glyphicon glyphicon-trash"></i>
+          Effacer
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="new_category">
+      <td>
+        <input id="title" 
+               type="text" 
+               class="form-control" 
+               required="true"
+               [(ngModel)]="new_category.name"/>
+      </td>
+      <td class="text-right">
+        <button class="btn btn-group-justified"
+                (click)="newCategory(new_category)">
+          Valider
+        </button>
+        <button class="btn btn-sm btn-default"
+                (click)="deleteNewCategory()">
+          Fermer
+        </button>
+      </td>
+    </tr>
+  </table>
+
+
+</div>
