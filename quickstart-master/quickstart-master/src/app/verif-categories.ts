@@ -3,10 +3,10 @@ import { Category } from './categorie/category';
 export const CATEGORIES: Category[] = [
   {
     id: 1,
-    name: 'bricolage',
+    name: 'information',
   },
   {
     id: 2,
-    name: 'jardin',
+    name: 'technologie',
   },
 ];
